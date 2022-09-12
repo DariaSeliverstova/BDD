@@ -1,5 +1,6 @@
-package ru.netology;
+package ru.netology.page;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -25,5 +26,12 @@ public class TransferMoneyPage {
         transferButton.click();
         return new TransferMoneyPage();
     }
+    public void shouldAppearErrorNotification() {
+        errorNotification.shouldBe(visible);
 
+    }
 }
+
+
+
+

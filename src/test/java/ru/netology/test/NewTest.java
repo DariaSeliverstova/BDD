@@ -58,9 +58,10 @@ public class NewTest {
         var transferMoneyPage = dashboardPage.cardRefill(0);
         int amount = 12000;
         transferMoneyPage.transferManey (amount, DataHelper.getSecondCardInfo().getCardNumber());
-        Assertions.assertEquals(balanceFirstBeforeTransfer + amount, dashboardPage.getCardBalance(0));
-        Assertions.assertEquals(balanceSecondBeforeTransfer - amount, dashboardPage.getCardBalance(1));
         transferMoneyPage.shouldAppearErrorNotification();
+        Assertions.assertEquals(balanceFirstBeforeTransfer, dashboardPage.getCardBalance(0));
+        Assertions.assertEquals(balanceSecondBeforeTransfer, dashboardPage.getCardBalance(1));
+
 
     }
 }
